@@ -5,9 +5,8 @@ namespace studxxx\conditionclient;
 use studxxx\conditionclient\Delimiters\DelimiterInterface;
 use studxxx\conditionclient\Operators\FactoryOperator;
 use studxxx\conditionclient\Operators\OperatorInterface;
-use yii\helpers\VarDumper;
 
-class ConditionBuilderService implements ConditionBuilderServiceInterface
+class ConditionBuilder implements ConditionBuilderInterface
 {
     private $data = [];
 
@@ -48,8 +47,9 @@ class ConditionBuilderService implements ConditionBuilderServiceInterface
         return $operatorFactory->getOperator();
     }
 
-    public function setData($data)
+    public function setData($data): ConditionBuilderInterface
     {
         $this->data = $data;
+        return $this;
     }
 }

@@ -3,8 +3,9 @@
 namespace studxxx\conditionclient;
 
 use studxxx\conditionclient\Delimiters\DelimiterInterface;
+use studxxx\conditionclient\Operators\OperatorInterface;
 
-interface ConditionBuilderServiceInterface
+interface ConditionBuilderInterface
 {
     const DEFAULT_OPERATOR = 'OR';
     const NOT = 'NOT';
@@ -13,7 +14,7 @@ interface ConditionBuilderServiceInterface
 
     public function buildConditions($conditions, $operator = self::DEFAULT_OPERATOR): DelimiterInterface;
 
-    public function buildCompare($condition);
+    public function buildCompare($condition): OperatorInterface;
 
-    public function setData($data);
+    public function setData($data): self;
 }

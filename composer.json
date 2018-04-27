@@ -13,7 +13,7 @@
       "role": "Developer"
     }
   ],
-  "license": "BSD-3-Clause",
+  "license": "MIT",
   "require": {
     "php": ">=7.1.0",
     "ext-intl": "*",
