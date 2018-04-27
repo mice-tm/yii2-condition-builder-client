@@ -16,9 +16,9 @@
   "license": "MIT",
   "require": {
     "php": ">=7.1.0",
-    "ext-intl": "*",
     "yiisoft/yii2": "*"
   },
+  "minimum-stability": "dev",
   "require-dev": {
     "codeception/codeception": "^2.4.1",
     "codeception/verify": "~0.3.1",
