@@ -6,9 +6,11 @@ abstract class AbstractFactoryOperator
 {
     const EQUAL = '=';
     const IN = 'in';
-
+    /** @var string  */
     protected $operator;
+    /** @var array */
     protected $data;
+    /** @var array */
     protected $params;
 
     /**
