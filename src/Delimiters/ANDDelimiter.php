@@ -4,13 +4,9 @@ namespace studxxx\conditionclient\Delimiters;
 
 class ANDDelimiter implements DelimiterInterface
 {
-    private $data = [];
-    /** @var \studxxx\conditionclient\Operators\OperatorInterface[] */
-    private $operators;
-    /** @var DelimiterInterface[] */
-    private $conditions;
+    use DelimiterTrait;
 
-    public function __construct($data)
+    public function __construct($data = [])
     {
         $this->data = $data;
     }
@@ -32,25 +28,5 @@ class ANDDelimiter implements DelimiterInterface
         }
 
         return $this->data;
-    }
-
-    public function setData(array $data): void
-    {
-        $this->data = $data;
-    }
-
-    public function check(): bool
-    {
-        return !empty($this->data['items']);
-    }
-
-    public function setOperator($operator): void
-    {
-        $this->operators[] = $operator;
-    }
-
-    public function setCondition($condition): void
-    {
-        $this->conditions[] = $condition;
     }
 }
