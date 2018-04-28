@@ -121,6 +121,7 @@ class DiscountService implements DiscountServiceInterface
 [LICENSE-MIT]: https://opensource.org/licenses/MIT
 [license-mit-badge]: https://img.shields.io/badge/License-MIT-yellow.svg
 
+<!--
 config tests
 cd yii2-prj/yii2-condition-builder-client/
 codecept bootstrap
@@ -166,3 +167,4 @@ xdebug.show_local_vars=1
 
 codecept run --coverage --coverage-html
 `https://medium.com/unhandled-code/manual-xdebug-install-on-homestead-7-0-running-php-7-2-37716928bfb3`
+-->

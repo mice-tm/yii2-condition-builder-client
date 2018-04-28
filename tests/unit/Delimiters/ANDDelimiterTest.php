@@ -26,8 +26,33 @@ class ANDDelimiterTest extends Unit
     }
 
     // tests
-    public function testSomeFeature()
+    public function testInstance()
     {
         $this->tester->assertInstanceOf('studxxx\conditionclient\Delimiters\DelimiterInterface', $this->delimiter);
+    }
+
+    public function testCheckSuccess()
+    {
+        $this->markTestIncomplete('This test has not been implemented yet.');
+    }
+
+    public function testGetDataSuccess()
+    {
+        $this->markTestIncomplete('This test has not been implemented yet.');
+    }
+
+    public function testSetDataSuccess()
+    {
+        $this->markTestIncomplete('This test has not been implemented yet.');
+    }
+
+    public function testSetOperatorSuccess()
+    {
+        $this->markTestIncomplete('This test has not been implemented yet.');
+    }
+
+    public function testSetConditionSuccess()
+    {
+        $this->markTestIncomplete('This test has not been implemented yet.');
     }
 }
