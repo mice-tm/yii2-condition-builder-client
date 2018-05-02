@@ -17,7 +17,6 @@ class FactoryOperator extends AbstractFactoryOperator
         if ($this->isInOperator()) {
             return new InOperator($this->data, $this->params);
         }
-
-        throw new \Exception('Operator not found');
+        throw new \Exception('Operator is not found');
     }
 }
