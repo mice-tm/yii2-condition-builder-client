@@ -44,11 +44,6 @@ class EqualOperator implements OperatorInterface
 
     public function isItemsFilter()
     {
-        return strpos($this->params['attribute'], 'items.');
-    }
-
-    public function isValueArray()
-    {
-        return is_array($this->params['value']);
+        return strpos($this->params['attribute'], 'items.') !== false;
     }
 }

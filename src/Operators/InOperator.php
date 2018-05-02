@@ -46,9 +46,4 @@ class InOperator implements OperatorInterface
     {
         return strpos($this->params['attribute'], 'items.') !== false;
     }
-
-    public function isValueArray()
-    {
-        return is_array($this->params['value']);
-    }
 }

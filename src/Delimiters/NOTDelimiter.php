@@ -2,17 +2,11 @@
 
 namespace studxxx\conditionclient\Delimiters;
 
-use yii\helpers\VarDumper;
-
 class NOTDelimiter implements DelimiterInterface
 {
-    private $data = [];
-    /** @var \studxxx\conditionclient\Operators\OperatorInterface[] */
-    private $operators = [];
-    /** @var DelimiterInterface[] */
-    private $conditions = [];
+    use DelimiterTrait;
 
-    public function __construct($data)
+    public function __construct($data = [])
     {
         $this->data = $data;
     }
@@ -41,25 +35,5 @@ class NOTDelimiter implements DelimiterInterface
             $this->data = array_diff($this->data, $condition->getData());
         }
         return $this->data;
-    }
-
-    public function setData(array $data): void
-    {
-        $this->data = $data;
-    }
-
-    public function check(): bool
-    {
-        return !empty($this->data['items']);
-    }
-
-    public function setOperator($operator): void
-    {
-        $this->operators[] = $operator;
-    }
-
-    public function setCondition($condition): void
-    {
-        $this->conditions[] = $condition;
     }
 }
