@@ -72,6 +72,35 @@ class ConditionBuilderTest extends Unit
                 "value" => ["exclusive", "buyout"],
                 "conditions" => []
             ],
+//                    "operator" => "AND",
+//                    "conditions" => [
+////                        [
+////                            "operator" => "NOT",
+////                            "conditions" => [
+////                                [
+////                                    "attribute" => "items.price_variant",
+////                                    "comparison" => "in",
+////                                    "value" => [
+////                                        "exclusive",
+////                                        "buyout"
+////                                    ],
+////                                    "conditions" => []
+////                                ]
+////                            ]
+////                        ],
+//                        [
+//                            "attribute" => "items.namespace",
+//                            "comparison" => "=",
+//                            "value" => "products",
+//                            "conditions" => []
+//                        ],
+////                        [
+////                            "attribute" => "project",
+////                            "comparison" => "=",
+////                            "value" => "TM",
+////                            "conditions" => []
+////                        ]
+//                    ]
         ];
     }
 
@@ -164,13 +193,388 @@ class ConditionBuilderTest extends Unit
                         ],
                     ]
                 ],
+//                [
+//                    "price_variant" => "regular",
+//                    "link" => "http://service-products.dev/api/v2/products/en/68293",
+//                    "services" => [],
+//                    "bundles" => [],
+//                    "id" => 55551,
+//                    "price" => 139,
+//                    "final_price" => 139,
+//                    "updated_at" => 1524828869,
+//                    "created_at" => 1524828765,
+//                    "namespace" => "products",
+//                    "discounts" => [],
+//                    'properties' => [
+//                        "color" => [
+//                            "black",
+//                            "white",
+//                            "grey"
+//                        ],
+//                        "features" => [
+//                            "Easy Installation",
+//                            "Admin Panel",
+//                            "Cherry Framework 5",
+//                            "Responsive",
+//                            "Retina Ready",
+//                            "Sample Data Installer",
+//                            "Search Engine Friendly",
+//                            "Visual Editor",
+//                            "WPML ready",
+//                            "Ecwid Ready"
+//                        ],
+//                        "coding" => [
+//                            "CSS 3",
+//                            "HTML 5",
+//                            "JQuery",
+//                            "Valid Coding",
+//                            "Sass"
+//                        ],
+//                        "additionalFeatures" => [
+//                            "MegaMenu",
+//                            "Calendar",
+//                            "Commenting System",
+//                            "Crossbrowser Compatibility",
+//                            "Dropdown Menu",
+//                            "Favicon",
+//                            "Google map",
+//                            "Google Web Fonts",
+//                            "Sample content",
+//                            "Social Options",
+//                            "MailChimp Ready Template",
+//                            "Background Options",
+//                            "Media library",
+//                            "Live Customizer",
+//                            "Performance Optimization",
+//                            "Sidebar Manager"
+//                        ],
+//                        "topic" => [
+//                            "Architecture",
+//                            "Construction Company Templates",
+//                            "Design",
+//                            "Design & Photography"
+//                        ],
+//                    ]
+//                ],
+//                [
+//                    "price_variant" => "regular",
+//                    "link" => "http://service-products.dev/api/v1/products/en/55539",
+//                    "services" => [],
+//                    "bundles" => [],
+//                    "id" => 55539,
+//                    "price" => 199,
+//                    "final_price" => 199,
+//                    "updated_at" => 1524828873,
+//                    "created_at" => 1524828765,
+//                    "namespace" => "products",
+//                    "discounts" => []
+//                ],
+//                [
+//                    "price_variant" => "regular",
+//                    "link" => "http://service-products.dev/api/v1/products/en/55554",
+//                    "services" => [],
+//                    "bundles" => [],
+//                    "id" => 55554,
+//                    "price" => 139,
+//                    "final_price" => 139,
+//                    "updated_at" => 1524828877,
+//                    "created_at" => 1524828765,
+//                    "namespace" => "products",
+//                    "discounts" => []
+//                ],
+//                [
+//                    "price_variant" => "regular",
+//                    "link" => "http://service-products.dev/api/v1/products/en/55527",
+//                    "services" => [],
+//                    "bundles" => [],
+//                    "id" => 55527,
+//                    "price" => 139,
+//                    "final_price" => 139,
+//                    "updated_at" => 1524828881,
+//                    "created_at" => 1524828765,
+//                    "namespace" => "products",
+//                    "discounts" => []
+//                ],
+//                [
+//                    "price_variant" => "regular",
+//                    "link" => "http://service-products.dev/api/v1/products/en/55519",
+//                    "services" => [],
+//                    "bundles" => [],
+//                    "id" => 55519,
+//                    "price" => 139,
+//                    "final_price" => 139,
+//                    "updated_at" => 1524828885,
+//                    "created_at" => 1524828765,
+//                    "namespace" => "products",
+//                    "discounts" => []
+//                ],
+//                [
+//                    "price_variant" => "regular",
+//                    "link" => "http://service-products.dev/api/v1/products/en/55521",
+//                    "services" => [],
+//                    "bundles" => [],
+//                    "id" => 55521,
+//                    "price" => 139,
+//                    "final_price" => 139,
+//                    "updated_at" => 1524828889,
+//                    "created_at" => 1524828765,
+//                    "namespace" => "products",
+//                    "discounts" => []
+//                ],
+//                [
+//                    "price_variant" => "regular",
+//                    "link" => "http://service-products.dev/api/v1/products/en/55531",
+//                    "services" => [],
+//                    "bundles" => [],
+//                    "id" => 55531,
+//                    "price" => 199,
+//                    "final_price" => 199,
+//                    "updated_at" => 1524828893,
+//                    "created_at" => 1524828765,
+//                    "namespace" => "products",
+//                    "discounts" => []
+//                ],
+//                [
+//                    "price_variant" => "regular",
+//                    "link" => "http://service-products.dev/api/v1/products/en/55511",
+//                    "services" => [],
+//                    "bundles" => [],
+//                    "id" => 55511,
+//                    "price" => 199,
+//                    "final_price" => 199,
+//                    "updated_at" => 1524828897,
+//                    "created_at" => 1524828765,
+//                    "namespace" => "products",
+//                    "discounts" => []
+//                ],
+//                [
+//                    "price_variant" => "regular",
+//                    "link" => "http://service-products.dev/api/v1/products/en/55504",
+//                    "services" => [],
+//                    "bundles" => [],
+//                    "id" => 55504,
+//                    "price" => 199,
+//                    "final_price" => 199,
+//                    "updated_at" => 1524828901,
+//                    "created_at" => 1524828765,
+//                    "namespace" => "products",
+//                    "discounts" => []
+//                ],
+//                [
+//                    "price_variant" => "regular",
+//                    "link" => "http://service-products.dev/api/v1/products/en/55542",
+//                    "services" => [],
+//                    "bundles" => [],
+//                    "id" => 55542,
+//                    "price" => 14,
+//                    "final_price" => 14,
+//                    "updated_at" => 1524828905,
+//                    "created_at" => 1524828765,
+//                    "namespace" => "products",
+//                    "discounts" => []
+//                ],
+//                [
+//                    "price_variant" => "regular",
+//                    "link" => "http://service-products.dev/api/v1/products/en/55543",
+//                    "services" => [],
+//                    "bundles" => [],
+//                    "id" => 55543,
+//                    "price" => 114,
+//                    "final_price" => 114,
+//                    "updated_at" => 1524828909,
+//                    "created_at" => 1524828765,
+//                    "namespace" => "products",
+//                    "discounts" => []
+//                ],
+//                [
+//                    "price_variant" => "regular",
+//                    "link" => "http://service-products.dev/api/v1/products/en/55524",
+//                    "services" => [],
+//                    "bundles" => [],
+//                    "id" => 55524,
+//                    "price" => 139,
+//                    "final_price" => 139,
+//                    "updated_at" => 1524828913,
+//                    "created_at" => 1524828765,
+//                    "namespace" => "products",
+//                    "discounts" => []
+//                ],
+//                [
+//                    "price_variant" => "regular",
+//                    "link" => "http://service-products.dev/api/v1/products/en/55518",
+//                    "services" => [],
+//                    "bundles" => [],
+//                    "id" => 55518,
+//                    "price" => 139,
+//                    "final_price" => 139,
+//                    "updated_at" => 1524828841,
+//                    "created_at" => 1524828764,
+//                    "namespace" => "products",
+//                    "discounts" => []
+//                ],
+//                [
+//                    "price_variant" => "regular",
+//                    "link" => "http://service-products.dev/api/v1/products/en/55502",
+//                    "services" => [],
+//                    "bundles" => [],
+//                    "id" => 55502,
+//                    "price" => 199,
+//                    "final_price" => 199,
+//                    "updated_at" => 1524828845,
+//                    "created_at" => 1524828764,
+//                    "namespace" => "products",
+//                    "discounts" => []
+//                ],
+//                [
+//                    "price_variant" => "regular",
+//                    "link" => "http://service-products.dev/api/v1/products/en/55503",
+//                    "services" => [],
+//                    "bundles" => [],
+//                    "id" => 55503,
+//                    "price" => 199,
+//                    "final_price" => 199,
+//                    "updated_at" => 1524828849,
+//                    "created_at" => 1524828764,
+//                    "namespace" => "products",
+//                    "discounts" => []
+//                ],
+//                [
+//                    "price_variant" => "regular",
+//                    "link" => "http://service-products.dev/api/v1/products/en/55516",
+//                    "services" => [],
+//                    "bundles" => [],
+//                    "id" => 55516,
+//                    "price" => 139,
+//                    "final_price" => 139,
+//                    "updated_at" => 1524828853,
+//                    "created_at" => 1524828764,
+//                    "namespace" => "products",
+//                    "discounts" => []
+//                ],
+//                [
+//                    "price_variant" => "regular",
+//                    "link" => "http://service-products.dev/api/v1/products/en/55538",
+//                    "services" => [],
+//                    "bundles" => [],
+//                    "id" => 55538,
+//                    "price" => 199,
+//                    "final_price" => 199,
+//                    "updated_at" => 1524828857,
+//                    "created_at" => 1524828764,
+//                    "namespace" => "products",
+//                    "discounts" => []
+//                ],
+//                [
+//                    "price_variant" => "regular",
+//                    "link" => "http://service-products.dev/api/v1/products/en/55533",
+//                    "services" => [],
+//                    "bundles" => [],
+//                    "id" => 55533,
+//                    "price" => 199,
+//                    "final_price" => 199,
+//                    "updated_at" => 1524828861,
+//                    "created_at" => 1524828764,
+//                    "namespace" => "products",
+//                    "discounts" => []
+//                ],
+//                [
+//                    "price_variant" => "regular",
+//                    "link" => "http://service-products.dev/api/v1/products/en/55555",
+//                    "services" => [],
+//                    "bundles" => [],
+//                    "id" => 55547,
+//                    "price" => 75,
+//                    "final_price" => 75,
+//                    "updated_at" => 1524828865,
+//                    "created_at" => 1524828764,
+//                    "namespace" => "products",
+//                    "discounts" => [],
+//                    "properties" => [
+//                        "bestsellersindex" => "1",
+//                        "reviewAverageScoreEs" => "5",
+//                        "features" => "CV",
+//                        "templateSources" => [
+//                            ".PSD",
+//                            ".PHP",
+//                        ],
+//                        "nameOfTheTemplate" => "Monstroid",
+//                        "reviewAverageScoreDe" => "5",
+//                        "topic" => [
+//                            "Architecture",
+//                            "Construction Company Templates",
+//                            "SEO Website Templates",
+//                            "Furniture Templates",
+//                            "Lawyer Templates",
+//                            "Education Templates",
+//                            "Hotels Templates",
+//                            "Interior & Furniture Templates",
+//                            "Law Templates",
+//                            "Sport Templates",
+//                            "Design",
+//                            "Design & Photography",
+//                            "Education & Books",
+//                            "Business & Services",
+//                            "Home & Family",
+//                            "Fashion & Beauty",
+//                            "Society & People",
+//                            "Sports, Outdoors & Travel",
+//                            "Loans",
+//                            "Finance",
+//                            "Business Services",
+//                            "More Sports"
+//                        ],
+//                        "styles" => "Neutral",
+//                        "turnOnPreviewExperiment" => "1",
+//                        "productFamily" => "Monstroid",
+//                        "followUpLetter" => "wp-themes-offers",
+//                        "color" => [
+//                            "white",
+//                            "grey",
+//                            "brown",
+//                            "pink",
+//                            "blue"
+//                        ],
+//                        "reviewsTotal" => "228",
+//                        "bestsellers" => "40",
+//                        "wordpressCompatibility" => "4.2.x-4.9.x",
+//                        "reviewAverageScore" => "5",
+//                        "sqi" => "95",
+//                        "functionality" => [
+//                            "Blog",
+//                            "Portfolio",
+//                            "One Page Templates"
+//                        ],
+//                        "additionalFeatures" => [
+//                            "Advanced Theme Options",
+//                            "Sliced PSD",
+//                            "Calendar",
+//                            "Crossbrowser Compatibility",
+//                            "Custom Page Templates",
+//                            "Dropdown Menu",
+//                            "Favicon",
+//                            "Google map",
+//                            "Google Web Fonts",
+//                            "Social Options",
+//                            "Tabs",
+//                            "Tag Cloud",
+//                            "Tooltips",
+//                            "MegaMenu"
+//                        ],
+//                        "types" => "WordPress Themes",
+//                        "trendiness" => "12",
+//                        "customDeliveryLetter" => "delivery_link_monstroid",
+//                        "reviewsTotalEs" => "6",
+//                        "testOnlyProperty" => "test",
+//                        "webForms" => "Contact Form",
+//                        "cherryFrameworkVersion" => "4.0",
+//                        "loyaltySells" => "1",
+//                        "skupromo" => "9%",
+//                        "dqi" => "89"
+//                    ],
+//                    "categoryId" => 100
+//                ]
             ],
             "discounts" => [],
-            "_links" => [
-                "self" => [
-                    "href" => "https://api.templatemonsterdev.com/carts/v1/carts/5ae30a5a1dddf2053d759a73"
-                ]
-            ]
         ];
     }
 }

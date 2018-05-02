@@ -13,20 +13,14 @@ class ANDDelimiter implements DelimiterInterface
 
     public function getData(): array
     {
-        foreach ($this->operators as $operator) {
-            $operator->setData($this->data);
-            $this->data = $operator->getData();
+        $operations = array_merge($this->operators, $this->conditions);
+        foreach ($operations as $operation) {
+            $operation->setData($this->data);
+            $this->data = $operation->getData();
+            if (!$this->check()) {
+                return $this->data;
+            }
         }
-
-        if (!$this->check()) {
-            return $this->data;
-        }
-
-        foreach ($this->conditions as $condition) {
-            $condition->setData($this->data);
-            $this->data = $condition->getData();
-        }
-
         return $this->data;
     }
 }
