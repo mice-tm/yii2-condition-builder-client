@@ -11,13 +11,13 @@ class NOTDelimiter implements DelimiterInterface
         $this->data = $data;
     }
 
-    public function getData(): array
+    public function filter(): array
     {
         $items = [];
         foreach ($this->operators as $operator) {
             /** @var \studxxx\conditionclient\Operators\OperatorInterface $operator */
             $operator->setData($this->data);
-            $notData = $operator->getData();
+            $notData = $operator->filter();
             foreach ($this->data['items'] as $item) {
                 if (!in_array($item, $notData['items'])) {
                     $items[] = $item;
@@ -32,7 +32,7 @@ class NOTDelimiter implements DelimiterInterface
 
         foreach ($this->conditions as $condition) {
             $condition->setData($this->data);
-            $this->data = array_diff($this->data, $condition->getData());
+            $this->data = array_diff($this->data, $condition->filter());
         }
         return $this->data;
     }

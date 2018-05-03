@@ -11,12 +11,12 @@ class ANDDelimiter implements DelimiterInterface
         $this->data = $data;
     }
 
-    public function getData(): array
+    public function filter(): array
     {
         $operations = array_merge($this->operators, $this->conditions);
         foreach ($operations as $operation) {
             $operation->setData($this->data);
-            $this->data = $operation->getData();
+            $this->data = $operation->filter();
             if (!$this->check()) {
                 return $this->data;
             }
