@@ -48,7 +48,7 @@ class ANDDelimiterTest extends Unit
             $delimiter->setCondition($condition);
         }
 
-        $result = $delimiter->getData();
+        $result = $delimiter->filter();
         $this->tester->assertEquals($data, $result);
     }
 
@@ -70,7 +70,7 @@ class ANDDelimiterTest extends Unit
             $delimiter->setCondition($condition);
         }
 
-        $result = $delimiter->getData();
+        $result = $delimiter->filter();
         $this->tester->assertNotEquals($data, $result);
         $this->tester->assertEmpty($result);
     }
@@ -202,7 +202,9 @@ class ANDDelimiterTest extends Unit
     {
         return Stub::make('studxxx\conditionclient\Operators\EqualOperator', [
             'data' => $data,
-            'getData' => $getData,
+            'filter' => function () use ($getData) {
+                return $getData;
+            },
             'setData' => function ($data) {
                 return;
             },
@@ -221,7 +223,9 @@ class ANDDelimiterTest extends Unit
     {
         return Stub::make('studxxx\conditionclient\Operators\InOperator', [
             'data' => $data,
-            'getData' => $getData,
+            'filter' => function () use ($getData) {
+                return $getData;
+            },
             'setData' => function ($data) {
                 return;
             },
@@ -242,7 +246,9 @@ class ANDDelimiterTest extends Unit
     {
         return Stub::make('studxxx\conditionclient\Delimiters\ANDDelimiter', [
             'data' => $data,
-            'getData' => $getData,
+            'filter' => function () use ($getData) {
+                return $getData;
+            },
             'operators' => $operators,
             'conditions' => $conditions,
             'check' => function () use ($check) {
@@ -278,7 +284,9 @@ class ANDDelimiterTest extends Unit
             'check' => function () use ($check) {
                 return $check;
             },
-            'getData' => $getData,
+            'filter' => function () use ($getData) {
+                return $getData;
+            },
             'setOperator' => function ($operator) {
                 return;
             },
@@ -304,7 +312,9 @@ class ANDDelimiterTest extends Unit
     {
         return Stub::make('studxxx\conditionclient\Delimiters\NOTDelimiter', [
             'data' => $data,
-            'getData' => $getData,
+            'filter' => function () use ($getData) {
+                return $getData;
+            },
             'operators' => $operators,
             'conditions' => $conditions,
             'check' => function () use ($check) {

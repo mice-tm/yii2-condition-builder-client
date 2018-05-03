@@ -27,7 +27,7 @@ class ConditionBuilderTest extends Unit
     {
         $this->builder->setData($this->getData());
         $constructor = $this->builder->buildConditions($this->getCondition());
-        $data = $constructor->getData();
+        $data = $constructor->filter();
 
 //        codecept_debug($data);
 

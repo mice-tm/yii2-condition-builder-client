@@ -13,14 +13,14 @@ class ORDelimiter implements DelimiterInterface
         $this->data = $data;
     }
 
-    public function getData(): array
+    public function filter(): array
     {
         $operations = array_merge($this->operators, $this->conditions);
         $data = [];
         foreach ($operations as $operation) {
             /** DelimiterInterface|\studxxx\conditionclient\Operators\OperatorInterface $operation */
             $operation->setData($this->data);
-            $item = $operation->getData();
+            $item = $operation->filter();
             $data = ArrayHelper::merge($data, $item);
         }
         return $data;

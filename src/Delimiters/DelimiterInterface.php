@@ -6,7 +6,7 @@ interface DelimiterInterface
 {
     public function check(): bool;
 
-    public function getData(): array;
+    public function filter(): array;
 
     public function setData(array $data): void;
 

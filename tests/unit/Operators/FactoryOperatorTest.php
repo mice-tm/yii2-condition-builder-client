@@ -29,7 +29,7 @@ class FactoryOperatorTest extends Unit
     {
         $factory = new FactoryOperator($operator, $data, $params);
         $condition = $factory->getOperator();
-        $result = $condition->getData();
+        $result = $condition->filter();
 
         $this->tester->assertInstanceOf('studxxx\conditionclient\Operators\FactoryOperator', $factory);
         $this->tester->assertInstanceOf($class, $condition);

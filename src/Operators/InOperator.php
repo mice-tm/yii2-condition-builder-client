@@ -17,7 +17,7 @@ class InOperator implements OperatorInterface
         $this->params = $params;
     }
 
-    public function getData(): array
+    public function filter(): array
     {
         $params = $this->params;
         if ($this->isItemsFilter()) {
