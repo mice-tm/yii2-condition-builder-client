@@ -23,6 +23,10 @@ class InOperator implements OperatorInterface
         if ($this->isItemsFilter()) {
             $items = array_filter($this->data['items'], function ($item) use ($params) {
                 $attr = str_replace('items.', '', $params['attribute']);
+
+                if (strpos($attr, '.') !== false) {
+                    return count(array_intersect(ArrayHelper::getValue($item, $attr), $params['value'])) > 0;
+                }
                 return in_array($item[$attr], $params['value']);
             });
             $this->data['items'] = $items;

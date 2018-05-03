@@ -29,9 +29,11 @@ class FactoryOperatorTest extends Unit
     {
         $factory = new FactoryOperator($operator, $data, $params);
         $condition = $factory->getOperator();
+        $result = $condition->getData();
 
         $this->tester->assertInstanceOf('studxxx\conditionclient\Operators\FactoryOperator', $factory);
         $this->tester->assertInstanceOf($class, $condition);
+        $this->tester->assertNotEmpty($result);
     }
 
     public static function dataProviderOperators()
@@ -39,31 +41,31 @@ class FactoryOperatorTest extends Unit
         return [
             [
                 FactoryOperator::EQUAL,
-                ['items' => ['namespace' => 'products']],
+                self::getData(),
                 ["attribute" => "items.namespace", "comparison" => FactoryOperator::EQUAL, "value" => "products", "conditions" => [] ],
                 'studxxx\conditionclient\Operators\EqualOperator'
             ],
             [
                 FactoryOperator::EQUAL,
-                ["price_variant" => "exclusive"],
+                self::getData(),
                 ["attribute" => "price_variant", "comparison" => FactoryOperator::EQUAL, "value" => "exclusive", "conditions" => [] ],
                 'studxxx\conditionclient\Operators\EqualOperator'
             ],
             [
                 FactoryOperator::IN,
-                ['items' => ['namespace' => ['products']]],
+                self::getData(),
                 ["attribute" => "items.namespace", "comparison" => FactoryOperator::IN, "value" => ["products", "services"], "conditions" => [] ],
                 'studxxx\conditionclient\Operators\InOperator'
             ],
             [
                 FactoryOperator::IN,
-                ['items' => ['properties' => ['features' => ['Responsive', 'Search Engine Friendly']]]],
+                self::getData(),
                 ["attribute" => "items.properties.features", "comparison" => FactoryOperator::IN, "value" => ["Responsive", "Admin Panel"], "conditions" => [] ],
                 'studxxx\conditionclient\Operators\InOperator'
             ],
             [
                 FactoryOperator::IN,
-                ['price_variant' => 'exclusive'],
+                self::getData(),
                 ["attribute" => "price_variant", "comparison" => FactoryOperator::IN, "value" => ["exclusive", "buyout"], "conditions" => [] ],
                 'studxxx\conditionclient\Operators\InOperator'
             ],
@@ -90,5 +92,23 @@ class FactoryOperatorTest extends Unit
         $this->expectExceptionMessage('Operator must be set!');
         $factory = new FactoryOperator('', [], []);
         $factory->getOperator();
+    }
+
+    protected static function getData()
+    {
+        return [
+            'price_variant' => 'exclusive',
+            'items' => [
+                [
+                    'namespace' => 'products',
+                    'properties' => [
+                        'features' => [
+                            'Responsive',
+                            'Search Engine Friendly'
+                        ]
+                    ]
+                ]
+            ]
+        ];
     }
 }
