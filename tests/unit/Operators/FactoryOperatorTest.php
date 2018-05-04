@@ -73,6 +73,61 @@ class FactoryOperatorTest extends Unit
     }
 
     /**
+     * @dataProvider dataProviderOperatorsWithEmptyResult
+     * @param string $operator
+     * @param array $data
+     * @param array $params
+     * @param string $class
+     * @throws \Exception
+     */
+    public function testOperatorWithEmptyResult($operator, $data, $params, $class)
+    {
+        $factory = new FactoryOperator($operator, $data, $params);
+        $condition = $factory->getOperator();
+        $result = $condition->filter();
+
+        $this->tester->assertInstanceOf('studxxx\conditionclient\Operators\FactoryOperator', $factory);
+        $this->tester->assertInstanceOf($class, $condition);
+        $this->tester->assertEmpty($result['items']);
+    }
+
+    public static function dataProviderOperatorsWithEmptyResult()
+    {
+        return [
+            [
+                FactoryOperator::EQUAL,
+                self::getData(),
+                ["attribute" => "items.namespace", "comparison" => FactoryOperator::EQUAL, "value" => "services", "conditions" => [] ],
+                'studxxx\conditionclient\Operators\EqualOperator'
+            ],
+            [
+                FactoryOperator::EQUAL,
+                self::getData(),
+                ["attribute" => "price_variant", "comparison" => FactoryOperator::EQUAL, "value" => "regular", "conditions" => [] ],
+                'studxxx\conditionclient\Operators\EqualOperator'
+            ],
+            [
+                FactoryOperator::IN,
+                self::getData(),
+                ["attribute" => "items.namespace", "comparison" => FactoryOperator::IN, "value" => ["memberships", "services"], "conditions" => [] ],
+                'studxxx\conditionclient\Operators\InOperator'
+            ],
+            [
+                FactoryOperator::IN,
+                self::getData(),
+                ["attribute" => "items.properties.features", "comparison" => FactoryOperator::IN, "value" => ["Wordpress", "Admin Panel"], "conditions" => [] ],
+                'studxxx\conditionclient\Operators\InOperator'
+            ],
+            [
+                FactoryOperator::IN,
+                self::getData(),
+                ["attribute" => "price_variant", "comparison" => FactoryOperator::IN, "value" => ["regular", "buyout"], "conditions" => [] ],
+                'studxxx\conditionclient\Operators\InOperator'
+            ],
+        ];
+    }
+
+    /**
      * @throws \Exception
      */
     public function testCreateUnusedOperatorFail()
