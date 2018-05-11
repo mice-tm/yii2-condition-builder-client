@@ -35,13 +35,11 @@ class ConditionBuilderTest extends Unit
 
     public function testBuildCompare()
     {
-//        $this->markTestSkipped('The MySQLi extension is not available.');
         $this->markTestIncomplete('This test has not been implemented yet.');
     }
 
     public function testSetData()
     {
-//        $this->markTestSkipped('The MySQLi extension is not available.');
         $this->markTestIncomplete('This test has not been implemented yet.');
     }
 
