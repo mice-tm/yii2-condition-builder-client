@@ -4,7 +4,7 @@ namespace studxxx\conditionclient\Operators;
 
 use yii\helpers\ArrayHelper;
 
-class InOperator implements OperatorInterface
+class GreaterThanOperator implements OperatorInterface
 {
     /** @var array */
     private $data;
@@ -23,14 +23,10 @@ class InOperator implements OperatorInterface
         if ($this->isItemsFilter()) {
             $items = array_filter($this->data['items'], function ($item) use ($params) {
                 $attr = str_replace('items.', '', $params['attribute']);
-
-                if (strpos($attr, '.') !== false) {
-                    return count(array_intersect(ArrayHelper::getValue($item, $attr), $params['value'])) > 0;
-                }
                 if (empty($item[$attr])) {
                     return false;
                 }
-                return in_array($item[$attr], $params['value']);
+                return $item[$attr] > $params['value'];
             });
             $this->data['items'] = $items;
 
@@ -38,7 +34,7 @@ class InOperator implements OperatorInterface
         }
 
         $attribute = ArrayHelper::getValue($this->data, $params['attribute']);
-        if (!$attribute || !in_array($attribute, $params['value'])) {
+        if (!$attribute || $attribute <= $params['value']) {
             $this->data['items'] = [];
         }
         return $this->data;

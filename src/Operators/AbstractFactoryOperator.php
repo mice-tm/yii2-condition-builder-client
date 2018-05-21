@@ -6,6 +6,12 @@ abstract class AbstractFactoryOperator
 {
     const EQUAL = '=';
     const IN = 'in';
+    const NOT_EQUAL = '!=';
+    const LESS_THAN = '<';
+    const LESS_THAN_OR_EQUAL = '<=';
+    const GREATER_THAN = '>';
+    const GREATER_THAN_OR_EQUAL = '>=';
+
     /** @var string  */
     protected $operator;
     /** @var array */
@@ -41,5 +47,30 @@ abstract class AbstractFactoryOperator
     public function isInOperator(): bool
     {
         return self::IN === $this->operator;
+    }
+
+    public function isGreaterThanOperator(): bool
+    {
+        return self::GREATER_THAN === $this->operator;
+    }
+
+    public function isGreaterThanOrEqualOperator(): bool
+    {
+        return self::GREATER_THAN_OR_EQUAL === $this->operator;
+    }
+
+    public function isLessThanOperator(): bool
+    {
+        return self::LESS_THAN === $this->operator;
+    }
+
+    public function isLessThanOrEqualOperator(): bool
+    {
+        return self::LESS_THAN_OR_EQUAL === $this->operator;
+    }
+
+    public function isNotEqualOperator(): bool
+    {
+        return self::NOT_EQUAL === $this->operator;
     }
 }
