@@ -23,10 +23,14 @@ class EqualOperator implements OperatorInterface
         if ($this->isItemsFilter()) {
             $items = array_filter($this->data['items'], function ($item) use ($params) {
                 $attr = str_replace('items.', '', $params['attribute']);
-                if (empty($item[$attr])) {
+
+                if (!$value = ArrayHelper::getValue($item, $attr)) {
                     return false;
                 }
-                return $item[$attr] == $params['value'];
+                if (is_array($value) && !is_array($params['value'])) {
+                    return in_array($params['value'], $value);
+                }
+                return $value == $params['value'];
             });
             $this->data['items'] = $items;
 
