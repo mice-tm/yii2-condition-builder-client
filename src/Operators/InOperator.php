@@ -25,7 +25,12 @@ class InOperator implements OperatorInterface
                 $attr = str_replace('items.', '', $params['attribute']);
 
                 if (strpos($attr, '.') !== false) {
-                    return count(array_intersect(ArrayHelper::getValue($item, $attr), $params['value'])) > 0;
+                    return count(
+                        array_intersect(
+                            (array) ArrayHelper::getValue($item, $attr),
+                            (array) $params['value']
+                        )
+                    ) > 0;
                 }
                 if (empty($item[$attr])) {
                     return false;
